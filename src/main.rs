@@ -52,7 +52,7 @@ const CHUNK_SIZE: usize = 10000;
 
 fn main() {
     let args = Args::parse();
-    let db_dir = args.db_dir.join("/hyperliquid_data/db_hub/Rpc");
+    let db_dir = args.db_dir.join("hyperliquid_data/db_hub/Rpc");
     let ingest_dir = args.ingest_dir;
     let db = DB::open_default(db_dir).unwrap();
 
