@@ -67,9 +67,9 @@ fn main() {
     ];
     let mut buf = Vec::with_capacity(100);
 
-    for i in (args.start_block..=args.end_block).step_by(CHUNK_SIZE) {
+    for i in (args.start_block..args.end_block + 1).step_by(CHUNK_SIZE) {
         let start = i;
-        let end = std::cmp::min(i + (CHUNK_SIZE as u64), args.end_block);
+        let end = std::cmp::min(i + (CHUNK_SIZE as u64), args.end_block + 1);
         println!("Processing blocks {} to {}", start, end);
 
         for block_number in start..end {
